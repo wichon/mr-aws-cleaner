@@ -5,8 +5,8 @@
   "customName": false,
   "customRole": false,
   "handler": "handler.handler",
-  "timeout": 6,
-  "memorySize": 1024,
+  "timeout": 60,
+  "memorySize": 256,
   "authorizer": {},
   "custom": {
     "excludePatterns": []
@@ -14,9 +14,10 @@
   "endpoints": [],
   "events": [
     {
-      "name": "EveryFridayCleanUpEvent",
+      "name": "MrEBCleanerEvent",
       "type": "schedule",
       "config": {
+        "enabled": true,
         "schedule": "cron(0 6 ? * 6 *)"
       }
     }

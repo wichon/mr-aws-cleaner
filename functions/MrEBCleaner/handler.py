@@ -10,7 +10,7 @@ versionsLimit = 25
 region = "us-east-1"
 
 def handler(event, context):
-    log.info('\n************** Starting Applications Cleanup, Region: %s - Application Limit: %s **************\n' % (region, versionsLimit))
+    log.info("************** Starting Applications Cleanup, Region: %s - Application Limit: %s **************" % (region, versionsLimit))
 
     ebClient = boto3.client('elasticbeanstalk', region_name=region)
     for app in ebClient.describe_applications()['Applications']:
@@ -41,4 +41,4 @@ def handler(event, context):
         else:
             log.info(' *** Application Versions number %s is lower than the limit %s, no need to clean up, bye.' % (sortedVersionsCount, versionsLimit))
 
-        log.info('\n------------------------------------------------------------------------------\n')
+        log.info("------------------------------------------------------------------------------")
