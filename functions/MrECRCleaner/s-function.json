@@ -1,0 +1,37 @@
+{
+  "name": "MrECRCleaner",
+  "runtime": "python2.7",
+  "description": "Serverless Lambda function for cleaning ECR images, part of the mr-aws-cleaner toolkit.",
+  "customName": false,
+  "customRole": false,
+  "handler": "handler.handler",
+  "timeout": 300,
+  "memorySize": 256,
+  "authorizer": {},
+  "custom": {
+    "excludePatterns": []
+  },
+  "endpoints": [],
+  "events": [
+    {
+      "name": "MrECRCleanerEvent",
+      "type": "schedule",
+      "config": {
+        "enabled": true,
+        "schedule": "cron(0 6 ? * 6 *)"
+      }
+    }
+  ],
+  "environment": {
+    "REGION": "${region_for_cleanup}",
+    "ECR_REGISTRY_ID": "${aws_account_id}",
+    "IMAGES_LIMIT": 20,
+    "SERVERLESS_PROJECT": "${project}",
+    "SERVERLESS_STAGE": "${stage}",
+    "SERVERLESS_REGION": "${region}"
+  },
+  "vpc": {
+    "securityGroupIds": [],
+    "subnetIds": []
+  }
+}

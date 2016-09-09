@@ -39,6 +39,18 @@
                 "logs:PutLogEvents"
               ],
               "Resource": "arn:aws:logs:${region}:*:*"
+            },
+            {
+              "Sid": "MrECRCleanerPolicy",
+              "Effect": "Allow",
+              "Action": [
+                "ecr:DescribeRepositories",
+                "ecr:ListImages",
+                "ecr:Batch*",
+                "ecs:List*",
+                "ecs:Describe*"
+              ],
+              "Resource": "*"
             }
           ]
         },
