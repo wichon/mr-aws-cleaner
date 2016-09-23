@@ -48,7 +48,8 @@
                 "ecr:ListImages",
                 "ecr:Batch*",
                 "ecs:List*",
-                "ecs:Describe*"
+                "ecs:Describe*",
+                "ecs:DeregisterTaskDefinition"
               ],
               "Resource": "*"
             }

@@ -1,0 +1,36 @@
+{
+  "name": "MrECSCleaner",
+  "runtime": "python2.7",
+  "description": "Serverless Lambda function for project: mr-aws-cleaner",
+  "customName": false,
+  "customRole": false,
+  "handler": "handler.handler",
+  "timeout": 300,
+  "memorySize": 256,
+  "authorizer": {},
+  "custom": {
+    "excludePatterns": []
+  },
+  "endpoints": [],
+  "events": [
+    {
+      "name": "MrECSCleanerEvent",
+      "type": "schedule",
+      "config": {
+        "enabled": true,
+        "schedule": "cron(30 5 ? * 6 *)"
+      }
+    }
+  ],
+  "environment": {
+    "REGION": "${region_for_cleanup}",
+    "TASK_DEFINITION_REVISIONS_LIMIT": 20,
+    "SERVERLESS_PROJECT": "${project}",
+    "SERVERLESS_STAGE": "${stage}",
+    "SERVERLESS_REGION": "${region}"
+  },
+  "vpc": {
+    "securityGroupIds": [],
+    "subnetIds": []
+  }
+}
