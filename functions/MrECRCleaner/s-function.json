@@ -23,9 +23,9 @@
     }
   ],
   "environment": {
-    "REGION": "${region_for_cleanup}",
+    "REGION": "${region}",
     "ECR_REGISTRY_ID": "${aws_account_id}",
-    "IMAGES_LIMIT": 20,
+    "IMAGES_LIMIT": "${ecr_images_limit}",
     "SERVERLESS_PROJECT": "${project}",
     "SERVERLESS_STAGE": "${stage}",
     "SERVERLESS_REGION": "${region}"

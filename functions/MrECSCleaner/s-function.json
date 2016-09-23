@@ -23,8 +23,8 @@
     }
   ],
   "environment": {
-    "REGION": "${region_for_cleanup}",
-    "TASK_DEFINITION_REVISIONS_LIMIT": 20,
+    "REGION": "${region}",
+    "TASK_DEFINITION_REVISIONS_LIMIT": "${task_definition_revisions_limit}",
     "SERVERLESS_PROJECT": "${project}",
     "SERVERLESS_STAGE": "${stage}",
     "SERVERLESS_REGION": "${region}"
