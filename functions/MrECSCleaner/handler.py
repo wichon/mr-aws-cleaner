@@ -113,13 +113,18 @@ def handler(event, context):
     taskDefinitionsByFamily = filter_task_definitions_in_use_by_cluster_services(taskDefinitionsByFamily=taskDefinitionsByFamily, taskDefinitionsInUse=set(taskDefinitionsInUse))
 
     log.info("Cleaning Task Definition Families ...")
+    log.info("------------------------------------------------------------------------------")
     if len(taskDefinitionsByFamily) > 0:
         for familyTaskDefintions in taskDefinitionsByFamily:
             taskDefinitionRevisionsCount = len(familyTaskDefintions['taskDefinitionArns'])
             log.info("Cleaning %s Task Definitions Revisions from Family: %s" % (taskDefinitionRevisionsCount, familyTaskDefintions['taskDefinitionFamily']))
+            familyDeregisteredRevisions = 0
             for taskDefinitionRevisionArn in familyTaskDefintions['taskDefinitionArns']:
                 if deregister_task_defintion_revision(taskDefinitionRevisioArn=taskDefinitionRevisionArn):
+                    familyDeregisteredRevisions+=1
                     totalDeregisteredTaskDefinitionRevisions+=1
+            log.info("Deregistered Revisions: %s" % familyDeregisteredRevisions)
+            log.info("------------------------------------------------------------------------------")
     else:
         log.info("There is no Task Definition Family with more than %s revisions, nothing to do :p." % TASK_DEFINITION_REVISIONS_LIMIT)
 
