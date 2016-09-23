@@ -44,6 +44,11 @@
               "Sid": "MrECRCleanerPolicy",
               "Effect": "Allow",
               "Action": [
+                "elasticbeanstalk:Describe*",
+                "elasticbeanstalk:DeleteApplicationVersion",
+                "s3:GetObject",
+                "s3:ListBucket",
+                "s3:DeleteObject",
                 "ecr:DescribeRepositories",
                 "ecr:ListImages",
                 "ecr:Batch*",
