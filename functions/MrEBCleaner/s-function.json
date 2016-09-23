@@ -23,6 +23,8 @@
     }
   ],
   "environment": {
+    "REGION": "${region_for_cleanup}",
+    "APPLICATION_VERSIONS_LIMIT": 25,
     "SERVERLESS_PROJECT": "${project}",
     "SERVERLESS_STAGE": "${stage}",
     "SERVERLESS_REGION": "${region}"

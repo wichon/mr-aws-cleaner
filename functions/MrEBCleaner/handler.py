@@ -6,8 +6,8 @@ import logging
 log = logging.getLogger()
 log.setLevel(logging.INFO)
 
-versionsLimit = 25
-region = "us-east-1"
+versionsLimit = int(os.getenv('APPLICATION_VERSIONS_LIMIT'))
+region = os.getenv('REGION')
 
 def handler(event, context):
     log.info("************** Starting Applications Cleanup, Region: %s - Application Limit: %s **************" % (region, versionsLimit))
