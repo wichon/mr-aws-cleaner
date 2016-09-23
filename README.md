@@ -1,5 +1,5 @@
 # Mr AWS Cleaner
-============
+
 Almost All-Purpose AWS resources cleaner that works like magic!
 
 This tools aims to become like a swiss knife for cleaning unused resources in your AWS Infrastructure.
