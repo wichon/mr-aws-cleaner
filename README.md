@@ -2,7 +2,7 @@
 
 Almost All-Purpose AWS resources cleaner that works like magic!
 
-This tools aims to become like a swiss knife for cleaning unused resources in your AWS Infrastructure.
+This toolkit aims to become like a swiss knife for cleaning unused resources in your AWS Infrastructure.
 
 ## Dependencies
 * node and npm (Tested with Node v6.5.0 and Npm v3.10.3)
