@@ -1,5 +1,5 @@
 # Mr EB Cleaner (Elastic Beanstalk)
-============
+
 Cleans up your Elastic Beanstalk applications versions, deleting older versions except the must recent ones under the defined limit.
 
 ## Considerations

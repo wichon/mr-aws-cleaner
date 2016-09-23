@@ -1,5 +1,5 @@
 # Mr ECR Cleaner (EC2 Container Registry)
-============
+
 Cleans up your container repositories, deleting older images except the must recent ones under the defined limit.
 
 ## Considerations:

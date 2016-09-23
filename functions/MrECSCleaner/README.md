@@ -1,5 +1,5 @@
 # Mr ECS Cleaner (EC2 Container Service)
-============
+
 Cleans up your task definition revisions, deregistering older revisions except the must recent ones under the defined limit.
 
 ## Considerations:
