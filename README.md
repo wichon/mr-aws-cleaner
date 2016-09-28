@@ -17,3 +17,5 @@ This toolkit aims to become like a swiss knife for cleaning unused resources in 
 
 ## Deploy
 Deploy your functions and their triggering events using `serverless dash deploy` (Optional, functions can be run manually also)
+
+## Disclaimer: I am not responsible for any damage done using this tool or unwanted behavior derived from it. Take some time to understand what it does and how it does it in order to see if it fits your needs.
